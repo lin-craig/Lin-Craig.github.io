@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Yan Craig Lin"
+title: "Craig Lin"
 author_profile: true
 ---
 
