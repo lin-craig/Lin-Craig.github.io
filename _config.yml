@@ -12,7 +12,7 @@ site_theme               : "default" # The available themes options are "default
 title                    : "Yan Craig Lin"
 title_separator          : "-"
 name                     : &name "Yan Craig Lin"
-description              : &description "A privacy-preserving personal academic website."   # Update this with a general description of your site, this is the default if not overridden by a page
+description              : &description "Personal academic website of Yan Craig Lin, focused on wireless sensing, IoT systems, and networked systems."   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://lin-craig.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -26,11 +26,11 @@ author:
   avatar           : "yan-craig-lin.png"
   name             : "Yan Craig Lin"
   pronouns         : # example: "she/her"  
-  bio              : "Undergraduate student at Nanjing University."
+  bio              : "Wireless sensing, IoT systems, and networked systems."
   location         : "Nanjing, China"
   employer         : "Nanjing University"
   uri              : # URL
-  email            : 
+  email            : "yanlin@smail.nju.edu.cn"
 
   # Academic websites
   academia         : # URL
@@ -51,7 +51,7 @@ author:
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : 
+  github           : "Lin-Craig"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
@@ -66,7 +66,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : "limyen"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username

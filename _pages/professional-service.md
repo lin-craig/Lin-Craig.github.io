@@ -8,7 +8,7 @@ author_profile: true
 
 ### Student organization leadership
 
-Coordinated student activities, event logistics, volunteer participation, and cross-team communication.
+Coordinated student activities, event logistics, volunteer participation, and cross-team communication in a campus residential-academic community.
 
 ### Academic community support
 

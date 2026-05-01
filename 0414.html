@@ -1,460 +1,482 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yan Craig Lin</title>
+    <title>Yan(Craig) LIN - Refined Academic CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$']] }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
-        :root {
-            --ink: #172033;
-            --muted: #5f6f86;
-            --line: #dfe6ee;
-            --paper: #ffffff;
-            --wash: #f5f7fa;
-            --accent: #2f6f73;
-            --accent-soft: #e8f2f1;
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        :root { 
+            --primary: #0f172a; 
+            --accent: #1e40af; 
+            --accent-soft: #eff6ff;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --rule: #e2e8f0;
         }
 
-        * {
-            box-sizing: border-box;
+        body { 
+            font-family: 'Inter', sans-serif; 
+            color: var(--text-main); 
+            background-color: #f8fafc; 
+            line-height: 1.4;
+            letter-spacing: -0.015em;
         }
 
-        html {
-            scroll-behavior: smooth;
+        .container { 
+            max-width: 210mm; 
+            margin: 1.5rem auto; 
+            background: white; 
+            padding: 35px 50px; 
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05); 
+            border-radius: 4px;
+            border: 1px solid #f1f5f9;
         }
 
-        body {
-            margin: 0;
-            color: var(--ink);
-            background: var(--wash);
-            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            line-height: 1.6;
+        section + section { margin-top: 1rem; }
+
+        /* Refined Section Title with elegant partial underline */
+        .section-title { 
+            font-size: 0.95rem; 
+            font-weight: 800; 
+            color: var(--primary); 
+            text-transform: uppercase; 
+            letter-spacing: 0.06em; 
+            position: relative;
+            margin: 1rem 0 0.55rem; 
+            padding-bottom: 0.35rem;
+            display: flex; 
+            align-items: center; 
+            border-bottom: 1px solid var(--rule);
         }
 
-        a {
-            color: inherit;
-            text-decoration: none;
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            width: 2.5rem;
+            height: 2px;
+            background-color: var(--accent);
         }
 
-        .page {
-            max-width: 1080px;
-            margin: 0 auto;
-            padding: 42px 24px 56px;
+        .section-title i { 
+            margin-right: 0.6rem; 
+            color: var(--accent); 
+            font-size: 0.85rem; 
+            opacity: 0.9;
         }
 
-        .shell {
-            background: var(--paper);
-            border: 1px solid var(--line);
-            border-radius: 8px;
-            box-shadow: 0 18px 45px rgba(23, 32, 51, 0.08);
-            overflow: hidden;
-        }
-
-        .hero {
-            display: grid;
-            grid-template-columns: 220px 1fr;
-            gap: 34px;
+        .badge { 
+            display: inline-flex; 
             align-items: center;
-            padding: 42px;
-            border-bottom: 1px solid var(--line);
-            background:
-                linear-gradient(135deg, rgba(47, 111, 115, 0.12), rgba(255, 255, 255, 0) 44%),
-                var(--paper);
+            background-color: var(--accent-soft); 
+            color: #1e40af; 
+            padding: 0.15rem 0.5rem; 
+            border-radius: 0.375rem; 
+            font-size: 0.72rem; 
+            font-weight: 800; 
+            border: 1px solid #bfdbfe; 
+            box-shadow: 0 1px 2px rgba(30, 64, 175, 0.04);
+            white-space: nowrap;
+            letter-spacing: 0.01em;
+            line-height: 1.2;
         }
 
-        .portrait {
-            width: 190px;
-            height: 190px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: center top;
-            border: 6px solid #ffffff;
-            box-shadow: 0 12px 28px rgba(23, 32, 51, 0.16);
-            justify-self: center;
-            background: #edf2f7;
-        }
+        .metric { font-weight: 700; color: var(--primary); }
 
-        .eyebrow {
-            display: inline-flex;
-            width: fit-content;
-            padding: 4px 10px;
-            border-radius: 999px;
-            background: var(--accent-soft);
-            color: var(--accent);
-            font-size: 0.76rem;
-            font-weight: 800;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        h1 {
-            margin: 14px 0 8px;
-            font-size: clamp(2.25rem, 5vw, 4rem);
-            line-height: 1;
-            letter-spacing: 0;
-        }
-
-        .subtitle {
-            max-width: 680px;
-            margin: 0;
-            color: var(--muted);
-            font-size: 1.02rem;
-            font-weight: 520;
-        }
-
-        nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 24px;
-        }
-
-        nav a {
-            display: inline-flex;
-            align-items: center;
-            min-height: 38px;
-            padding: 8px 12px;
-            border: 1px solid var(--line);
-            border-radius: 999px;
-            color: #314159;
-            font-size: 0.86rem;
-            font-weight: 750;
-            background: rgba(255, 255, 255, 0.76);
-        }
-
-        nav a:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        .content {
-            padding: 14px 42px 46px;
-        }
-
-        section {
-            padding-top: 30px;
-        }
-
-        .section-head {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) auto;
-            gap: 20px;
-            align-items: flex-end;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--line);
-            margin-bottom: 18px;
-        }
-
-        h2 {
-            margin: 0;
-            color: var(--ink);
-            font-size: 1.06rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        .section-note {
-            margin: 0;
-            color: var(--muted);
-            font-size: 0.86rem;
+        .cv-date {
             text-align: right;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #64748b;
+            white-space: nowrap;
+            margin-top: 0.25rem;
         }
 
-        .items {
-            display: grid;
-            gap: 14px;
-        }
-
-        .item {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) auto;
-            gap: 20px;
-            padding: 16px 0;
-            border-bottom: 1px solid #eef2f6;
-        }
-
-        .item:last-child {
-            border-bottom: 0;
-        }
-
-        h3 {
-            margin: 0 0 5px;
-            color: #1b2638;
-            font-size: 1rem;
-            line-height: 1.35;
-        }
-
-        .meta {
-            color: var(--muted);
-            font-size: 0.9rem;
-            font-weight: 560;
-        }
-
-        .date {
-            color: #6f7d90;
-            font-size: 0.84rem;
+        .cv-kicker {
+            color: var(--accent);
             font-weight: 800;
-            padding-top: 2px;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 0.25rem;
+            opacity: 0.92;
         }
 
-        .tag {
+        .cv-list {
+            list-style: disc;
+            margin-left: 1rem;
+            padding-left: 0.25rem;
+            font-size: 0.9rem;
+            line-height: 1.45;
+            color: #475569;
+            font-weight: 500;
+        }
+
+        .cv-list li + li { margin-top: 0.25rem; }
+        .cv-list li::marker { color: #94a3b8; }
+
+        .cv-ref-link {
             display: inline-flex;
             align-items: center;
-            margin-left: 8px;
-            padding: 2px 8px;
-            border-radius: 999px;
-            background: var(--accent-soft);
-            color: var(--accent);
-            font-size: 0.72rem;
-            font-weight: 800;
-            vertical-align: middle;
+            font-size: 0.78rem;
+            color: #1e40af;
+            font-weight: 700;
+            transition: color 0.2s ease-in-out;
         }
 
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 14px;
+        .cv-ref-link:hover { color: #2563eb; }
+        
+        a { transition: all 0.2s ease-in-out; color: inherit; text-decoration: none; }
+        .academic-link { border-bottom: 1px solid rgba(30, 64, 175, 0.25); padding-bottom: 1px;}
+        .academic-link:hover { border-bottom-color: var(--accent); color: var(--accent); }
+
+        /* Print formatting */
+        @page {
+            size: A4;
+            margin: 10mm 15mm;
         }
 
-        .contact-box {
-            min-height: 108px;
-            padding: 18px;
-            border: 1px solid var(--line);
-            border-radius: 8px;
-            background: #fbfcfd;
-        }
-
-        .contact-box strong {
-            display: block;
-            margin-bottom: 6px;
-            color: #1b2638;
-            font-size: 0.92rem;
-        }
-
-        .contact-box span {
-            color: var(--muted);
-            font-size: 0.91rem;
-        }
-
-        .print {
-            position: fixed;
-            right: 24px;
-            bottom: 24px;
-            border: 0;
-            border-radius: 999px;
-            padding: 12px 18px;
-            background: var(--ink);
-            color: #ffffff;
-            font-weight: 800;
-            cursor: pointer;
-            box-shadow: 0 14px 30px rgba(23, 32, 51, 0.22);
-        }
-
-        .print:hover {
-            background: var(--accent);
-        }
-
-        @media (max-width: 760px) {
-            .page {
-                padding: 18px;
-            }
-
-            .hero {
-                grid-template-columns: 1fr;
-                padding: 30px 22px;
-                text-align: center;
-            }
-
-            .eyebrow,
-            nav {
-                margin-left: auto;
-                margin-right: auto;
-                justify-content: center;
-            }
-
-            .content {
-                padding: 4px 22px 34px;
-            }
-
-            .section-head,
-            .item {
-                display: block;
-            }
-
-            .section-note {
-                margin-top: 4px;
-                text-align: left;
-            }
-
-            .date {
-                margin-top: 4px;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media print {
-            body {
-                background: #ffffff;
-            }
-
-            .page {
-                max-width: none;
-                padding: 0;
-            }
-
-            .shell {
-                border: 0;
-                box-shadow: none;
-            }
-
-            .print,
-            nav {
-                display: none;
-            }
+        @media print { 
+            body { background: white; -webkit-print-color-adjust: exact; } 
+            .container { box-shadow: none; margin: 0; width: 100%; max-width: 100%; padding: 0; border-radius: 0; } 
+            .no-print { display: none; } 
         }
     </style>
 </head>
-<body>
-    <button class="print" onclick="window.print()">Export PDF</button>
+<body class="antialiased">
 
-    <main class="page">
-        <div class="shell">
-            <header class="hero">
-                <img class="portrait" src="photo.png" alt="Portrait of Yan Craig Lin">
-                <div>
-                    <span class="eyebrow">Personal Page</span>
-                    <h1>Yan Craig Lin</h1>
-                    <p class="subtitle">
-                        Undergraduate student at Nanjing University. This public page keeps only non-sensitive academic records and general campus information.
-                    </p>
-                    <nav aria-label="Page sections">
-                        <a href="#updates">Update</a>
-                        <a href="#publications">Publication</a>
-                        <a href="#teaching">Teaching</a>
-                        <a href="#service">Professional Service</a>
-                        <a href="#contact">Contact</a>
-                    </nav>
-                </div>
-            </header>
+    <button onclick="window.print()" class="no-print fixed bottom-8 right-8 bg-slate-900 text-white px-6 py-3 rounded-full shadow-xl hover:bg-blue-800 hover:-translate-y-0.5 transition-all font-semibold z-50 flex items-center">
+        <i class="fas fa-file-pdf mr-2"></i> Export CV
+    </button>
 
-            <div class="content">
-                <section id="updates">
-                    <div class="section-head">
-                        <h2>Update</h2>
-                        <p class="section-note">Selected public notes</p>
-                    </div>
-                    <div class="items">
-                        <article class="item">
-                            <div>
-                                <h3>Personal page refreshed</h3>
-                                <div class="meta">Public materials were consolidated into a concise, privacy-preserving profile.</div>
-                            </div>
-                            <div class="date">Apr 2026</div>
-                        </article>
-                        <article class="item">
-                            <div>
-                                <h3>Academic record prepared for public sharing</h3>
-                                <div class="meta">Sensitive project descriptions, named contacts, private records, and restricted content were removed.</div>
-                            </div>
-                            <div class="date">Apr 2026</div>
-                        </article>
-                    </div>
-                </section>
-
-                <section id="publications">
-                    <div class="section-head">
-                        <h2>Publication</h2>
-                        <p class="section-note">Non-sensitive list</p>
-                    </div>
-                    <div class="items">
-                        <article class="item">
-                            <div>
-                                <h3>Selected academic writing <span class="tag">Redacted</span></h3>
-                                <div class="meta">Public versions will be listed here after review and approval for open release.</div>
-                            </div>
-                            <div class="date">In progress</div>
-                        </article>
-                        <article class="item">
-                            <div>
-                                <h3>Course and project reports <span class="tag">Private</span></h3>
-                                <div class="meta">Titles, collaborators, supervisors, source materials, and internal notes are withheld from this public page.</div>
-                            </div>
-                            <div class="date">2022-2026</div>
-                        </article>
-                    </div>
-                </section>
-
-                <section id="teaching">
-                    <div class="section-head">
-                        <h2>Teaching</h2>
-                        <p class="section-note">Student support</p>
-                    </div>
-                    <div class="items">
-                        <article class="item">
-                            <div>
-                                <h3>Peer mentoring and study support</h3>
-                                <div class="meta">Provided general academic guidance for undergraduate peers, including study planning, coursework review, and campus resource orientation.</div>
-                            </div>
-                            <div class="date">2023-2026</div>
-                        </article>
-                        <article class="item">
-                            <div>
-                                <h3>Workshop support</h3>
-                                <div class="meta">Assisted with student-facing sessions focused on learning habits, presentation preparation, and collaborative project organization.</div>
-                            </div>
-                            <div class="date">2023-2025</div>
-                        </article>
-                    </div>
-                </section>
-
-                <section id="service">
-                    <div class="section-head">
-                        <h2>Professional Service</h2>
-                        <p class="section-note">Public-facing roles</p>
-                    </div>
-                    <div class="items">
-                        <article class="item">
-                            <div>
-                                <h3>Student organization leadership</h3>
-                                <div class="meta">Coordinated student activities, event logistics, volunteer participation, and cross-team communication.</div>
-                            </div>
-                            <div class="date">2022-2026</div>
-                        </article>
-                        <article class="item">
-                            <div>
-                                <h3>Academic community support</h3>
-                                <div class="meta">Helped with seminar preparation, guest reception, and general operational support for campus events.</div>
-                            </div>
-                            <div class="date">2023-2025</div>
-                        </article>
-                    </div>
-                </section>
-
-                <section id="contact">
-                    <div class="section-head">
-                        <h2>Contact</h2>
-                        <p class="section-note">Privacy-preserving channel</p>
-                    </div>
-                    <div class="contact-grid">
-                        <div class="contact-box">
-                            <strong>Location</strong>
-                            <span>Nanjing, China</span>
-                        </div>
-                        <div class="contact-box">
-                            <strong>Affiliation</strong>
-                            <span>Nanjing University</span>
-                        </div>
-                        <div class="contact-box">
-                            <strong>Public Contact</strong>
-                            <span>Shared upon request through trusted channels.</span>
-                        </div>
-                    </div>
-                </section>
+    <div class="container">
+        <!-- REFINED HEADER (Centered & Elegant) -->
+        <header class="flex flex-col items-center text-center mb-5 pb-5 border-b border-slate-200/80">
+            <h1 class="text-[2.4rem] font-extrabold text-slate-900 tracking-tight mb-1.5 leading-none">Yan(Craig) LIN</h1>
+            
+            <p class="text-slate-600 font-bold tracking-[0.12em] text-[0.78rem] uppercase leading-relaxed mb-3.5">
+                Wireless Sensing • IoT Systems <br>
+                <span class="text-slate-500 font-semibold tracking-[0.1em]">Networked Systems Architecture</span>
+            </p>
+            
+            <div class="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 text-[0.85rem] text-slate-500 font-medium">
+                <a href="mailto:yanlin@smail.nju.edu.cn" class="hover:text-blue-700 flex items-center group">
+                    <i class="fas fa-envelope text-slate-300 group-hover:text-blue-500 transition-colors mr-1.5 w-4 text-center"></i>yanlin@smail.nju.edu.cn
+                </a>
+                <span class="text-slate-200 text-[0.6rem]">•</span>
+                <span class="flex items-center text-slate-600">
+                    <i class="fas fa-location-dot text-slate-300 mr-1.5 w-4 text-center"></i>Nanjing, China
+                </span>
+                <span class="text-slate-200 text-[0.6rem]">•</span>
+                <a href="https://linkedin.com/in/limyen/" class="hover:text-blue-700 flex items-center group">
+                    <i class="fab fa-linkedin text-slate-300 group-hover:text-blue-500 transition-colors mr-1.5 w-4 text-center"></i>linkedin.com/in/limyen
+                </a>
             </div>
-        </div>
-    </main>
+        </header>
+
+        <!-- EDUCATION -->
+        <section>
+            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+            
+            <!-- NJU -->
+            <div class="flex justify-between items-start mb-0.5">
+                <div>
+                    <h3 class="text-[1.1rem] font-bold text-slate-900 leading-tight">Nanjing University (NJU) 
+                        <span class="badge ml-2 align-middle relative -top-[1px]">Rank 1 / 60</span>
+                    </h3>
+                    <div class="text-slate-600 font-medium text-[0.92rem] mt-0.5">B.Eng. in Telecommunications Engineering</div>
+                </div>
+                <div class="cv-date">Sept 2022 – July 2026 (Exp.)</div>
+            </div>
+            
+            <p class="text-[0.9rem] mt-1.5 font-medium text-slate-600">
+                <span class="metric">GPA: 91.4/100</span> <span class="text-slate-300 mx-1">|</span> 
+                <span class="font-bold text-blue-800 text-nowrap">National Scholarship (Top 1%)</span> <span class="text-slate-300 mx-1">|</span>
+                <span class="font-bold text-slate-700">President of <a href="https://xsxy.nju.edu.cn/English/Academy/20230425/i244374.html" target="_blank" class="academic-link hover:text-blue-800 transition-colors">Yu hsiu Ku Academy</a> Student Union</span>
+            </p>
+            
+            <!-- Degree Equivalence -->
+            <p class="text-[0.82rem] mt-1 font-medium text-slate-500">
+                <i class="fas fa-certificate text-blue-700/70 mr-1 text-[0.75rem]"></i>
+                4-year degree with graduation thesis and high GPA, equivalent to <span class="font-bold text-slate-700">Australian First-Class Honours</span>.
+            </p>
+            
+            <!-- NUS -->
+            <div class="flex justify-between items-start mt-4 mb-0.5">
+                <div>
+                    <h3 class="text-[1.1rem] font-bold text-slate-900 leading-tight">National University of Singapore (NUS)</h3>
+                    <div class="text-slate-600 font-medium text-[0.92rem] mt-0.5">Exchange Student, College of Design and Engineering</div>
+                </div>
+                <div class="cv-date">Jan 2025 – May 2025</div>
+            </div>
+        </section>
+
+        <!-- AWARDS -->
+        <section>
+            <h2 class="section-title"><i class="fas fa-trophy"></i> Awards</h2>
+            <div class="grid grid-cols-2 gap-x-10 gap-y-1.5 text-[0.82rem] font-bold text-slate-700 mt-2">
+                <!-- Special Row for Outstanding Graduate -->
+                <div class="col-span-2 flex justify-between items-start border-b border-slate-100 pb-1.5 mb-1">
+                    <div>
+                        <span class="text-slate-900 text-[0.85rem]">Outstanding Graduate <span class="badge ml-1.5 align-middle relative -top-[1px]">Nominated</span></span> 
+                        <div class="text-[0.75rem] text-slate-500 font-medium mt-0.5 font-normal tracking-tight">Nominated by School of Electronic Science and Engineering; pending Office of Undergraduate Education review.</div>
+                    </div>
+                    <span class="text-slate-400 text-[0.65rem] font-bold text-right uppercase tracking-wide mt-0.5">Nanjing University</span>
+                </div>
+                
+                <div class="flex justify-between items-center border-b border-slate-50 pb-1">
+                    <span>National Scholarship</span> 
+                    <span class="text-slate-400 text-[0.65rem] font-bold text-right uppercase tracking-wide">Ministry of Education, China</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-slate-50 pb-1">
+                    <span>Joyce M. Kuok Special Award</span> 
+                    <span class="text-slate-400 text-[0.65rem] font-bold text-right uppercase tracking-wide">Kuok Foundation</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-slate-50 pb-1">
+                    <span>Outstanding Student Award</span> 
+                    <span class="text-slate-400 text-[0.65rem] font-bold text-right uppercase tracking-wide">Nanjing University</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-slate-50 pb-1">
+                    <span>Outstanding Student Leader Award</span> 
+                    <span class="text-slate-400 text-[0.65rem] font-bold text-right uppercase tracking-wide">Nanjing University</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-slate-50 pb-1">
+                    <span>Outstanding Volunteer Service Award</span> 
+                    <span class="text-slate-400 text-[0.65rem] font-bold text-right uppercase tracking-wide">Nanjing University</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-slate-50 pb-1">
+                    <span>People's Scholarship (Social Work)</span> 
+                    <span class="text-slate-400 text-[0.65rem] font-bold text-right uppercase tracking-wide">Nanjing University</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESEARCH PROJECTS -->
+        <section>
+            <h2 class="section-title"><i class="fas fa-flask"></i> Research Projects</h2>
+            
+            <!-- NJU Project -->
+            <div class="mb-4">
+                <div class="flex justify-between items-start mb-1.5 gap-4">
+                    <div>
+                        <h3 class="text-[1.05rem] font-bold text-slate-900 leading-snug">Research and In-Orbit Validation of High-Efficiency Deep-Space Transmission Protocols</h3>
+                        <div class="cv-kicker">
+                            Outstanding Provincial I&E Training Program <span class="mx-1 text-slate-300">|</span> Advisor: Prof. Kanglian Zhao
+                        </div>
+                    </div>
+                    <div class="cv-date">Dec 2023 – Sept 2024</div>
+                </div>
+                <ul class="cv-list">
+                    <li>Engineered an Earth-Moon link emulation testbed using <span class="font-bold italic text-slate-800">Linux tc/netem</span> to simulate extreme conditions (4s RTT, high BER).</li>
+                    <li>Achieved <span class="metric text-slate-900">35% faster delivery</span> than standard LTP by scaling QUIC's timers to multi-second scale and leveraging SACK to eliminate Head-of-Line (HoL) blocking.</li>
+                    <li><span class="font-bold text-blue-800">Impact:</span> The adapted QUIC framework was subsequently deployed by the lab for real-world testing on the <span class="metric text-slate-900 border-b border-slate-200">Queqiao-2 lunar relay satellite</span>.</li>
+                </ul>
+            </div>
+
+            <!-- ECG Project -->
+            <div class="mb-4">
+                <div class="flex justify-between items-start mb-1.5 gap-4">
+                    <div>
+                        <h3 class="text-[1.05rem] font-bold text-slate-900 leading-snug">
+                            A Full-Stack IoT Cardiac Monitoring Platform: From Analog Front-End to Cloud Diagnostics
+                            <span class="badge ml-1.5 align-middle relative -top-[1px]">National 1st Prize (Team Award)</span>
+                        </h3>
+                    </div>
+                    <div class="text-right text-[0.68rem] font-extrabold text-slate-400 uppercase tracking-widest mt-1 whitespace-nowrap">IoT Design Comp.</div>
+                </div>
+                <ul class="cv-list">
+                    <li><span class="font-bold text-slate-800">Leadership & Architecture</span>: Led a cross-functional team to architect the full-stack system, overseeing the integration from hardware prototyping to cloud deployment.</li>
+                    <li><span class="font-bold text-slate-800">Perception Layer</span>: Designed an Analog Front-End (AFE) circuit with high-pass and notch filters to capture weak ECG signals.</li>
+                    <li><span class="font-bold text-slate-800">Edge & Cloud Pipeline</span>: Leveraged STM32F429 (ADC+DMA) for edge-based QRS Localization and engineered an MQTT pipeline for real-time Arrhythmia cloud diagnostics.</li>
+                </ul>
+            </div>
+
+            <!-- Undergraduate Thesis Project -->
+            <div class="mt-3">
+                <div class="flex justify-between items-start mb-1.5 gap-4">
+                    <div>
+                        <h3 class="text-[1.05rem] font-bold text-slate-900 leading-snug">
+                            5G RAN Slicing Resource Allocation via Deep RL
+                            <span class="badge ml-1.5 align-middle relative -top-[1px]">Undergraduate Thesis</span>
+                        </h3>
+                        <div class="cv-kicker">
+                            Advisor: <a href="https://ese.nju.edu.cn/zj_en/list.htm" target="_blank" class="academic-link">Assoc. Prof. Jian Zhao</a>
+                        </div>
+                    </div>
+                    <div class="cv-date">In Progress (Exp. June 2026)</div>
+                </div>
+                <ul class="cv-list">
+                    <li><span class="font-bold text-slate-800">Framework Formulation</span>: Engineered a <span class="font-bold italic text-slate-800">Gymnasium-based</span> simulation environment for single-cell 5G downlink scheduling, formulating the dynamic eMBB and URLLC coexistence problem as a Markov Decision Process (MDP).</li>
+                    <li><span class="font-bold text-slate-800">Algorithm Innovation</span>: Designed and trained a Proximal Policy Optimization (PPO) agent with a novel <span class="metric text-slate-900 border-b border-slate-200">variance-penalized multi-objective reward function</span> to maximize eMBB throughput stability while satisfying strict URLLC constraints (≤1 ms deadline, BLER ≤10⁻⁵).</li>
+                    <li><span class="font-bold text-slate-800">Evaluation</span>: Demonstrated reduced eMBB outage rates and superior out-of-distribution (OOD) robustness under unseen traffic conditions compared to baselines.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- RESEARCH AND WORK EXPERIENCE -->
+        <section>
+            <h2 class="section-title"><i class="fas fa-briefcase"></i> Research and Work Experience</h2>
+
+            <div>
+                <div class="flex justify-between items-start mb-1.5 gap-4">
+                    <div>
+                        <h3 class="text-[1.1rem] font-bold text-slate-900 leading-tight">HKUST - Visiting Research Intern</h3>
+                        <div class="cv-kicker">
+                            <a href="https://wands.hk/" target="_blank" class="academic-link">WANDS Group</a> <span class="mx-1 text-slate-300">|</span> Advisor: Prof. Mo Li
+                        </div>
+                    </div>
+                    <div class="cv-date">June 2025 – Oct 2025</div>
+                </div>
+                
+                <div class="mt-3 space-y-3">
+                    <div>
+                        <h4 class="text-[0.85rem] font-extrabold text-slate-800 uppercase tracking-tight mb-1 flex items-center">
+                            <span class="w-1.5 h-1.5 bg-slate-300 mr-2 rounded-full inline-block"></span>
+                            Project I: UAV Remote Identification System Architecture
+                        </h4>
+                        <ul class="cv-list">
+                            <li>Proposed an Edge-Based <span class="metric text-slate-900">SNR Slope Filtering</span> mechanism; simulations demonstrated an <span class="metric text-slate-900">82% reduction in redundant traffic</span> while maintaining a <span class="metric text-slate-900">99% packet delivery rate</span>.</li>
+                            <li>Engineered an end-to-end telemetry pipeline (<span class="italic font-bold text-slate-800">Onboard NMEA $\rightarrow$ Protobuf $\rightarrow$ MQTT</span>), adopted as the foundational module for the lab's multi-UAV dashboard.</li>
+                            <li>Modified LoRaWAN MAC logic to bypass mandatory RX windows, breaking the protocol's restriction to enable reliable <span class="metric text-slate-900">5Hz high-frequency tracking</span>.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-[0.85rem] font-extrabold text-slate-800 uppercase tracking-tight mb-1 flex items-center">
+                            <span class="w-1.5 h-1.5 bg-slate-300 mr-2 rounded-full inline-block"></span>
+                            Project II: LoRaWAN Gateway Mesh Observability
+                        </h4>
+                        <ul class="cv-list">
+                            <li>Built a <span class="metric text-slate-900">Network Observability Pipeline</span> via timestamp injection and path tracing (DevAddr/FCnt extraction).</li>
+                            <li>Discovered the naive flooding design caused <span class="metric text-slate-900">3x network redundancy (broadcast storms)</span>, wasting 60% capacity; proposed a new <span class="metric text-slate-900">$ETX \times ToA$</span> routing metric to balance reliability and airtime.</li>
+                            <li>Resolved a hardcoded JIT scheduler bottleneck in the source code, reducing single-hop relay latency from <span class="metric text-slate-900">1000ms to 80ms</span>.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LANGUAGE SKILLS -->
+        <section>
+            <h2 class="section-title"><i class="fas fa-language"></i> Language Skills</h2>
+            <div class="mt-2 space-y-2 text-[0.85rem]">
+                <div class="flex items-center">
+                    <span class="font-bold text-slate-900 w-24">English</span>
+                    <div class="flex items-center flex-wrap gap-4">
+                        <span class="badge">IELTS 6.5</span>
+                        <div class="text-slate-500 font-medium flex gap-5 ml-2 border-l-[2px] border-slate-100 pl-4 text-[0.8rem] tracking-tight">
+                            <span>Listening: <span class="font-bold text-slate-700">6.0</span></span>
+                            <span>Reading: <span class="font-bold text-slate-700">7.0</span></span>
+                            <span>Writing: <span class="font-bold text-slate-700">6.5</span></span>
+                            <span>Speaking: <span class="font-bold text-slate-700">6.0</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center pt-0.5">
+                    <span class="font-bold text-slate-900 w-24">Mandarin</span>
+                    <span class="text-slate-600 font-medium w-32 text-[0.8rem]">Native</span>
+                    <span class="font-bold text-slate-900 w-24">Hokkien</span>
+                    <span class="text-slate-600 font-medium text-[0.8rem]">Native</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECHNICAL SKILLS -->
+        <section>
+            <h2 class="section-title"><i class="fas fa-tools"></i> Technical Skills</h2>
+            <div class="grid grid-cols-2 gap-8 mt-2">
+                <p class="text-[0.85rem] leading-snug">
+                    <span class="font-extrabold uppercase text-slate-400 text-[0.65rem] block mb-0.5 tracking-wider">Systems & Embedded</span> 
+                    <span class="font-semibold text-slate-700">C/C++, Linux, Python, R, MATLAB,Docker, STM32, OpenWrt, Multisim.</span>
+                </p>
+                <p class="text-[0.85rem] leading-snug">
+                    <span class="font-extrabold uppercase text-slate-400 text-[0.65rem] block mb-0.5 tracking-wider">Network Protocols & AI</span> 
+                    <span class="font-semibold text-slate-700">LoRaWAN, LoRa, QUIC, Deep RL, LTP.</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- REFERENCES -->
+        <section>
+            <h2 class="section-title"><i class="fas fa-users"></i> References</h2>
+            <div class="mt-2 flex flex-col gap-3">
+                <!-- Referee 1 -->
+                <div class="flex justify-between items-start border-b border-slate-100 pb-2.5 last:border-0 last:pb-0 gap-4">
+                    <div>
+                        <h3 class="text-[0.95rem] font-extrabold text-slate-900 flex items-center gap-2.5">
+                            Professor Mo Li
+                            <span class="badge">IEEE Fellow & ACM SIGMOBILE Chair</span>
+                        </h3>
+                        <div class="text-[0.8rem] text-slate-600 font-medium mt-1">
+                            Department of Computer Science and Engineering <span class="mx-1.5 text-slate-300">|</span> HKUST
+                        </div>
+                    </div>
+                    <div class="flex gap-5 pt-1">
+                        <a href="mailto:lim@cse.ust.hk" class="cv-ref-link">
+                            <i class="fas fa-envelope mr-1.5 text-slate-400"></i>lim@cse.ust.hk
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=kjiwE6IAAAAJ&hl=en" target="_blank" class="cv-ref-link">
+                            <i class="fas fa-graduation-cap mr-1.5 text-slate-400"></i>Google Scholar
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Referee 2 -->
+                <div class="flex justify-between items-start border-b border-slate-100 pb-2.5 last:border-0 last:pb-0 gap-4">
+                    <div>
+                        <h3 class="text-[0.95rem] font-extrabold text-slate-900 flex items-center gap-2.5">
+                            Professor Kanglian Zhao
+                            <span class="badge">Deputy Director</span>
+                        </h3>
+                        <div class="text-[0.8rem] text-slate-600 font-medium mt-1">
+                            Institute of Space-Terrestrial Intelligent Networks <span class="mx-1.5 text-slate-300">|</span> Nanjing University
+                        </div>
+                    </div>
+                    <div class="flex gap-5 pt-1">
+                        <a href="mailto:zhaokanglian@nju.edu.cn" class="cv-ref-link">
+                            <i class="fas fa-envelope mr-1.5 text-slate-400"></i>zhaokanglian@nju.edu.cn
+                        </a>
+                        <a href="https://www.researchgate.net/profile/Kanglian-Zhao" target="_blank" class="cv-ref-link">
+                            <i class="fab fa-researchgate mr-1.5 text-slate-400"></i>ResearchGate
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Referee 3 -->
+                <div class="flex justify-between items-start border-b border-slate-100 pb-2.5 last:border-0 last:pb-0 gap-4">
+                    <div>
+                        <h3 class="text-[0.95rem] font-extrabold text-slate-900 flex items-center gap-2.5">
+                            Professor Yijun Feng
+                            <span class="badge">Former Associate Dean</span>
+                        </h3>
+                        <div class="text-[0.8rem] text-slate-600 font-medium mt-1">
+                            School of Electronic Science and Engineering <span class="mx-1.5 text-slate-300">|</span> Nanjing University
+                        </div>
+                    </div>
+                    <div class="flex gap-5 pt-1">
+                        <a href="mailto:yjfeng@nju.edu.cn" class="cv-ref-link">
+                            <i class="fas fa-envelope mr-1.5 text-slate-400"></i>yjfeng@nju.edu.cn
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=E4mlZG4AAAAJ&hl=en" target="_blank" class="cv-ref-link">
+                            <i class="fas fa-graduation-cap mr-1.5 text-slate-400"></i>Google Scholar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+
 </body>
 </html>
