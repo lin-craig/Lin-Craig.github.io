@@ -12,7 +12,7 @@ site_theme               : "default" # The available themes options are "default
 title                    : "Craig Lin"
 title_separator          : "-"
 name                     : &name "Craig Lin"
-description              : &description "Personal academic website of Craig Lin, focused on wireless sensing, IoT systems, and networked systems."   # Update this with a general description of your site, this is the default if not overridden by a page
+description              : &description "Personal academic website of Craig Lin, B.Eng. in Telecommunications Engineering."   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://lin-craig.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -26,9 +26,10 @@ author:
   avatar           : "yan-craig-lin.png"
   name             : "Craig Lin"
   pronouns         : # example: "she/her"  
-  bio              : "Wireless sensing, IoT systems, and networked systems."
-  location         : "Nanjing, China"
+  bio              : "B.Eng. in Telecommunications Engineering"
+  location         :
   employer         : "Nanjing University"
+  employer_url     : "https://www.nju.edu.cn/"
   uri              : # URL
   email            : "yanlin@smail.nju.edu.cn"
 
