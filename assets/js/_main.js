@@ -16,7 +16,7 @@ let determineComputedTheme = () => {
   if (themeSetting != "system") {
     return themeSetting;
   }
-  return (userPref && userPref("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 };
 
 // detect OS/browser preference
@@ -24,11 +24,11 @@ const browserPref = window.matchMedia('(prefers-color-scheme: dark)').matches ? 
 
 // Set the theme on page load or when explicitly called
 let setTheme = (theme) => {
+  const explicitTheme = theme || localStorage.getItem("theme");
   const use_theme =
-    theme ||
-    localStorage.getItem("theme") ||
-    $("html").attr("data-theme") ||
-    browserPref;
+    explicitTheme === "system" || !explicitTheme
+      ? determineComputedTheme()
+      : explicitTheme;
 
   if (use_theme === "dark") {
     $("html").attr("data-theme", "dark");
@@ -41,7 +41,7 @@ let setTheme = (theme) => {
 
 // Toggle the theme manually
 var toggleTheme = () => {
-  const current_theme = $("html").attr("data-theme");
+  const current_theme = determineComputedTheme();
   const new_theme = current_theme === "dark" ? "light" : "dark";
   localStorage.setItem("theme", new_theme);
   setTheme(new_theme);
