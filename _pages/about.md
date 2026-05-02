@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Craig Lin"
+title: "About"
 author_profile: true
 ---
 
