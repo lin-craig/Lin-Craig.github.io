@@ -65,7 +65,7 @@ description: "Personal academic website..."
 url: "https://lin-craig.github.io"
 
 author:
-  avatar: "yan-craig-lin.png"
+  avatar: "yan-craig-lin.jpg"
   name: "Craig Lin"
   bio: "B.Eng. in Telecommunications Engineering"
   employer: "Nanjing University"
