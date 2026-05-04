@@ -46,6 +46,30 @@
    SITE CUSTOMIZATION
    ========================================================================== */
 
+:root {
+  --academic-motion-fast: 140ms;
+  --academic-motion-base: 220ms;
+  --academic-motion-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --academic-hover-shadow: 0 16px 36px var(--brand-shadow);
+  --academic-focus-ring: 0 0 0 3px rgba(138, 111, 180, 0.22);
+}
+
+@mixin academic-interactive-base {
+  transition:
+    background-color var(--academic-motion-base) var(--academic-motion-ease),
+    border-color var(--academic-motion-base) var(--academic-motion-ease),
+    box-shadow var(--academic-motion-base) var(--academic-motion-ease),
+    color var(--academic-motion-fast) ease,
+    transform var(--academic-motion-base) var(--academic-motion-ease);
+}
+
+@mixin academic-focus-visible {
+  &:focus-visible {
+    outline: 0;
+    box-shadow: var(--academic-focus-ring);
+  }
+}
+
 html,
 body {
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Ccircle cx='10' cy='10' r='6' fill='%23ff6900' fill-opacity='.22' stroke='%23ff6900' stroke-width='2'/%3E%3Ccircle cx='18' cy='18' r='3' fill='%238a6fb4'/%3E%3C/svg%3E") 10 10, auto;
@@ -103,12 +127,23 @@ button,
     border-radius: 8px;
     padding: 1.35rem;
     box-shadow: 0 18px 50px var(--brand-shadow);
+    @include academic-interactive-base;
+  }
+
+  .page__inner-wrap:hover {
+    border-color: var(--brand-border-strong);
+    box-shadow: 0 22px 58px var(--brand-shadow);
   }
 }
 
 .page__title {
   color: var(--brand-heading);
   font-size: clamp(2rem, 4vw, 3.05rem);
+  @include academic-interactive-base;
+}
+
+.page__title:hover {
+  color: var(--brand-orange-deep);
 }
 
 .page__content {
@@ -119,6 +154,12 @@ button,
     padding-bottom: 0.45em;
     color: var(--brand-heading);
     border-bottom: 1px solid var(--brand-border);
+    @include academic-interactive-base;
+  }
+
+  h2:hover {
+    border-bottom-color: var(--brand-orange);
+    color: var(--brand-orange-deep);
   }
 
   h2::after {
@@ -131,11 +172,44 @@ button,
 
   a {
     color: var(--global-link-color);
+    background-image: linear-gradient(var(--brand-orange-soft), var(--brand-orange-soft));
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 0.12em;
     text-decoration-color: var(--brand-border-strong);
     text-underline-offset: 0.18em;
+    @include academic-interactive-base;
+    @include academic-focus-visible;
 
     &:hover {
+      background-size: 100% 0.55em;
       color: var(--global-link-color-hover);
+      text-decoration-color: transparent;
+    }
+  }
+
+  strong {
+    border-radius: 4px;
+    color: var(--brand-heading);
+    @include academic-interactive-base;
+
+    &:hover {
+      background: var(--brand-orange-soft);
+      color: var(--brand-orange-deep);
+    }
+  }
+
+  li {
+    border-radius: 5px;
+    @include academic-interactive-base;
+
+    &::marker {
+      color: var(--brand-lavender);
+    }
+
+    &:hover {
+      color: var(--brand-heading);
+      transform: translateX(2px);
     }
   }
 }
@@ -151,6 +225,13 @@ button,
   border: 2px solid var(--brand-border-strong);
   border-radius: 50%;
   box-shadow: 0 14px 32px var(--brand-shadow);
+  @include academic-interactive-base;
+}
+
+.author__avatar img:hover {
+  border-color: var(--brand-orange);
+  box-shadow: 0 18px 42px var(--brand-shadow);
+  transform: translateY(-2px);
 }
 
 .author__name {
@@ -166,12 +247,30 @@ button,
   color: var(--brand-orange);
 }
 
+.author__urls a,
+.author__urls button {
+  border-radius: 5px;
+  @include academic-interactive-base;
+  @include academic-focus-visible;
+}
+
+.author__urls a:hover,
+.author__urls button:hover {
+  background: var(--brand-orange-soft);
+  text-decoration: none;
+  transform: translateX(3px);
+}
+
 .btn {
   background-color: var(--brand-orange);
   border-radius: 6px;
+  @include academic-interactive-base;
+  @include academic-focus-visible;
 
   &:hover {
     background-color: var(--brand-orange-deep);
+    box-shadow: var(--academic-hover-shadow);
+    transform: translateY(-2px);
   }
 }
 
@@ -183,6 +282,17 @@ button,
 
 .masthead__menu-item {
   background-color: transparent;
+
+  a {
+    border-radius: 5px;
+    @include academic-interactive-base;
+    @include academic-focus-visible;
+  }
+
+  a:hover {
+    background: var(--brand-orange-soft);
+    color: var(--brand-orange);
+  }
 }
 
 .masthead__menu-item.selected a {
@@ -201,8 +311,46 @@ button,
   color: var(--brand-lavender);
 }
 
+.archive__item {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0.65rem 0.75rem;
+  @include academic-interactive-base;
+}
+
+.archive__item:hover {
+  background: var(--brand-surface-soft);
+  border-color: var(--brand-border);
+  box-shadow: var(--academic-hover-shadow);
+  transform: translateY(-2px);
+}
+
+.archive__item-title a {
+  @include academic-focus-visible;
+}
+
 .page__content > p:first-child {
   margin-top: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+
+  .archive__item:hover,
+  .author__avatar img:hover,
+  .author__urls a:hover,
+  .author__urls button:hover,
+  .btn:hover,
+  .page__content li:hover {
+    transform: none;
+  }
 }
 
 @media (max-width: 760px) {
