@@ -2,19 +2,19 @@
     DEFAULT THEME - LIGHT VERSION
     ========================================================================== */
 /* Color codes used for the theme */
-$primary-color              : #ff6900;
-$gray                       : #7d7771;
+$primary-color              : #da7756;
+$gray                       : #786157;
 $dark-gray                  : mix(#000, $gray, 40%);
 $darker-gray                : mix(#000, $gray, 60%);
 $light-gray                 : mix(#fff, $gray, 50%);
 $lighter-gray               : mix(#fff, $gray, 90%);
 
 /* Color codes used for the site */
-$danger-color               : #d84d35;
-$info-color                 : #8a6fb4;
+$danger-color               : #b93f2d;
+$info-color                 : #a85a3f;
 $notice-color               : #7a8288;
-$success-color              : #8a6fb4;
-$warning-color              : #ff6900;
+$success-color              : #946443;
+$warning-color              : #da7756;
 
 /* Other basic settings for the template */
 $border-radius              : 4px;
@@ -29,35 +29,35 @@ $sidebar-screen-min-width   : 1024px;
 /* Default light theme for the site */
 :root {
     --global-base-color                 : #{$primary-color};
-    --global-bg-color                   : #fffaf5;
-    --global-footer-bg-color            : #fff3e7;
-    --global-border-color               : #eadfd4;
-    --global-dark-border-color          : #cbbbac;
-    --global-code-background-color      : #fff5ec;
-    --global-code-text-color            : #{$darker-gray};
-    --global-fig-caption-color          : mix(#fff,  #{$dark-gray}, 25%);
-    --global-link-color                 : #d95a00;
-    --global-link-color-hover           : #8a6fb4;
-    --global-link-color-visited         : #8a6fb4;
-    --global-masthead-link-color        : #3b3028;
-    --global-masthead-link-color-hover  : #ff6900;
-    --global-text-color                 : #312923;
-    --global-text-color-light           : #74685f;
-    --global-thead-color                : #fff0e2;
-    --brand-orange                      : #ff6900;
-    --brand-orange-deep                 : #b84a00;
-    --brand-orange-soft                 : #fff1e4;
-    --brand-lavender                    : #8a6fb4;
-    --brand-lavender-soft               : #f3effa;
-    --brand-ink                         : #2b2520;
-    --brand-paper                       : #fffdf9;
-    --brand-bg                          : #fffaf5;
-    --brand-surface                     : #fffdf9;
-    --brand-surface-soft                : #fff7ee;
-    --brand-card                        : #ffffff;
-    --brand-border                      : #eadfd4;
-    --brand-border-strong               : #d9c6b3;
-    --brand-shadow                      : rgba(78, 51, 31, 0.08);
-    --brand-muted                       : #74685f;
-    --brand-heading                     : #2b2520;
+    --global-bg-color                   : #e5a088;
+    --global-footer-bg-color            : #c96445;
+    --global-border-color               : #c9765c;
+    --global-dark-border-color          : #9f4e36;
+    --global-code-background-color      : #f4b9a6;
+    --global-code-text-color            : #302723;
+    --global-fig-caption-color          : #766b67;
+    --global-link-color                 : #883a25;
+    --global-link-color-hover           : #5f2416;
+    --global-link-color-visited         : #9f4e36;
+    --global-masthead-link-color        : #381c14;
+    --global-masthead-link-color-hover  : #9f4e36;
+    --global-text-color                 : #321a13;
+    --global-text-color-light           : #6f4c40;
+    --global-thead-color                : #f1ad97;
+    --brand-orange                      : #da7756;
+    --brand-orange-deep                 : #9f4e36;
+    --brand-orange-soft                 : #f5bca9;
+    --brand-lavender                    : #7a321f;
+    --brand-lavender-soft               : #efaa93;
+    --brand-ink                         : #321a13;
+    --brand-paper                       : #fff4ef;
+    --brand-bg                          : #e5a088;
+    --brand-surface                     : #fff4ef;
+    --brand-surface-soft                : #f9c6b5;
+    --brand-card                        : #fff8f4;
+    --brand-border                      : #c9765c;
+    --brand-border-strong               : #9f4e36;
+    --brand-shadow                      : rgba(74, 29, 17, 0.14);
+    --brand-muted                       : #6f4c40;
+    --brand-heading                     : #321a13;
 }

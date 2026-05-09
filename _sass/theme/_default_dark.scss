@@ -3,26 +3,26 @@
     ========================================================================== */
 
 /* Color codes used for the theme */
-$primary-color              : #ff9a3d;
-$gray                       : #9a928b;
+$primary-color              : #da7756;
+$gray                       : #a98b7f;
 $dark-gray                  : mix(#000, $gray, 40%);
 $darker-gray                : mix(#000, $gray, 60%);
 $light-gray                 : mix(#fff, $gray, 50%);
 
-$background                 : #211b17;
-$background-light           : #4b3b32;
-$background-lighter         : #2c241f;
-$text                       : #fff5eb;
-$link                       : #ffb06a;
-$link-dark                  : #d7c2ff;
-$link-light                 : #d7c2ff;
+$background                 : #26110d;
+$background-light           : #553126;
+$background-lighter         : #351912;
+$text                       : #fff0ea;
+$link                       : #f0a184;
+$link-dark                  : #ffc6b3;
+$link-light                 : #d87758;
 
 /* Color codes used for the site */
-$danger-color               : #ee5f5b;
-$info-color                 : #bda7ea;
+$danger-color               : #ff7d6b;
+$info-color                 : #f0a184;
 $notice-color               : #7a8288;
-$success-color              : #bda7ea;
-$warning-color              : #ff9a3d;
+$success-color              : #d6a06a;
+$warning-color              : #da7756;
 
 /* Other basic settings for the template */
 $border-radius              : 4px;
@@ -38,34 +38,34 @@ $sidebar-screen-min-width   : 1024px;
 html[data-theme="dark"] {
     --global-base-color                 : #{$primary-color};
     --global-bg-color                   : #{$background};
-    --global-footer-bg-color            : #1a1512;
+    --global-footer-bg-color            : #1b0b08;
     --global-border-color               : #{$background-light};
     --global-dark-border-color          : #806a5c;
     --global-code-background-color      : #2c241f;
-    --global-code-text-color            : #ffd5ad;
-    --global-fig-caption-color          : #c4b7ad;
+    --global-code-text-color            : #ffc6b3;
+    --global-fig-caption-color          : #d8b5a9;
     --global-link-color                 : #{$link};
     --global-link-color-hover           : #{$link-dark};
     --global-link-color-visited         : #{$link-light};
     --global-masthead-link-color        : #{$text};
     --global-masthead-link-color-hover  : #{$primary-color};
     --global-text-color                 : #{$text};
-    --global-text-color-light           : #d7c9bd;
+    --global-text-color-light           : #d8b5a9;
     --global-thead-color                : #{$background-lighter};
-    --brand-orange                      : #ff9a3d;
-    --brand-orange-deep                 : #ffb06a;
-    --brand-orange-soft                 : #3a2a20;
-    --brand-lavender                    : #d7c2ff;
-    --brand-lavender-soft               : #2f2840;
-    --brand-ink                         : #fff5eb;
-    --brand-paper                       : #211b17;
-    --brand-bg                          : #211b17;
-    --brand-surface                     : #2a211c;
-    --brand-surface-soft                : #332821;
-    --brand-card                        : #2a211c;
-    --brand-border                      : #4b3b32;
-    --brand-border-strong               : #806a5c;
-    --brand-shadow                      : rgba(0, 0, 0, 0.24);
-    --brand-muted                       : #d7c9bd;
-    --brand-heading                     : #fff5eb;
+    --brand-orange                      : #da7756;
+    --brand-orange-deep                 : #ffc6b3;
+    --brand-orange-soft                 : #4a241a;
+    --brand-lavender                    : #f0a184;
+    --brand-lavender-soft               : #3b1c15;
+    --brand-ink                         : #fff0ea;
+    --brand-paper                       : #26110d;
+    --brand-bg                          : #26110d;
+    --brand-surface                     : #351912;
+    --brand-surface-soft                : #4a241a;
+    --brand-card                        : #351912;
+    --brand-border                      : #553126;
+    --brand-border-strong               : #955139;
+    --brand-shadow                      : rgba(0, 0, 0, 0.32);
+    --brand-muted                       : #d8b5a9;
+    --brand-heading                     : #fff0ea;
 }
