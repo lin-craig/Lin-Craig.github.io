@@ -1,31 +1,40 @@
----
-layout: compress
----
-
-{% include base_path %}
-
 <!doctype html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js"{% if site.site_theme == "dark" %} data-theme="dark"{% endif %}>
+<html lang="{{ site.locale | default: 'en-US' }}">
   <head>
-    {% include head.html %}
-    {% include head/custom.html %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ page.description | default: site.description | escape }}">
+    <title>{% if page.permalink == '/' %}{{ site.title }}{% else %}{{ page.title }} · {{ site.title }}{% endif %}</title>
+    <link rel="icon" href="{{ '/images/favicon.ico' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   </head>
-
   <body>
+    <a class="skip-link" href="#content">Skip to content</a>
 
-    {% include browser-upgrade.html %}
-    {% include masthead.html %}
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="site-name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <nav aria-label="Main navigation">
+          <ul class="nav-list">
+            {% for item in site.data.navigation.main %}
+              <li>
+                <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-    {{ content }}
+    <main class="site-shell">
+      {% include sidebar.html %}
+      <article class="content-card" id="content">
+        {{ content }}
+      </article>
+    </main>
 
-    <div class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
-      </footer>
-    </div>
-
-    {% include scripts.html %}
-
+    <footer class="site-footer">
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}</p>
+    </footer>
   </body>
 </html>

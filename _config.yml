@@ -1,119 +1,43 @@
 # Site identity
-locale: "en-US"
-site_theme: "default"
 title: "Craig Lin"
-title_separator: "-"
-name: "Craig Lin"
-description: "Personal academic website of Craig Lin, B.Eng. in Telecommunications Engineering."
+description: "Personal academic website of Yan (Craig) Lin, focusing on wireless communications, networked systems, and intelligent resource allocation."
 url: "https://lin-craig.github.io"
 baseurl: ""
-repository: "Lin-Craig/Lin-Craig.github.io"
+locale: "en-US"
+timezone: "Etc/UTC"
 
 # Sidebar profile
 author:
-  avatar: "yan-craig-lin.jpg"
   name: "Craig Lin"
-  bio: "B.Eng. in Telecommunications Engineering"
-  location:
-  employer: "Nanjing University"
-  employer_url: "https://www.nju.edu.cn/"
-  email: "yanlin@smail.nju.edu.cn"
+  avatar: "yan-craig-lin.jpg"
+  bio: "Wireless Communications · Networked Systems"
+  email: "linyan2021@outlook.com"
   linkedin: "limyen"
-  github:
-  googlescholar:
-  orcid:
-  researchgate:
 
-# Common site behavior
-breadcrumbs: false
-words_per_minute: 160
-future: true
-atom_feed:
-  hide: true
-  path:
-
-# Comments and analytics are off by default.
-comments:
-  provider:
-analytics:
-  provider: "false"
-  google:
-    tracking_id:
-
-# Files Jekyll should read or ignore.
-include:
-  - _pages
-exclude:
-  - .agents
-  - .bundle
-  - .github
-  - .sass-cache
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - README.md
-  - local
-  - node_modules
-  - tmp
-  - vendor
-
-keep_files:
-  - .git
-
-# Markdown and build settings
-encoding: "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-markdown: kramdown
-highlighter: rouge
-excerpt_separator: "\n\n"
-incremental: false
-kramdown:
-  input: GFM
-  hard_wrap: false
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
-
-# Defaults for all pages in _pages/
+# Page defaults
 defaults:
   - scope:
       path: ""
       type: pages
     values:
       layout: single
-      author_profile: true
 
-# Sass/SCSS
-sass:
-  sass_dir: _sass
-  style: compressed
-
-# Output URLs
-permalink: /:categories/:title/
-timezone: Etc/UTC
-
-# GitHub Pages-compatible plugins
+# Jekyll settings
+markdown: kramdown
+permalink: /:title/
 plugins:
-  - jekyll-feed
-  - jekyll-gist
-  - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-redirect-from
-  - jemoji
 
-whitelist:
-  - jekyll-feed
-  - jekyll-gist
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-redirect-from
-  - jemoji
+include:
+  - _pages
 
-# HTML compression
-compress_html:
-  clippings: all
-  ignore:
-    envs: development
+exclude:
+  - .bundle
+  - .git
+  - .github
+  - .sass-cache
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - vendor

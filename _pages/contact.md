@@ -1,10 +1,7 @@
 ---
 permalink: /contact/
 title: "Contact"
-author_profile: true
 ---
 
-## Contact
-
-**Email:** [yanlin@smail.nju.edu.cn](mailto:yanlin@smail.nju.edu.cn)<br>
+**Email:** [linyan2021@outlook.com](mailto:linyan2021@outlook.com)<br>
 **LinkedIn:** [linkedin.com/in/limyen](https://www.linkedin.com/in/limyen/)

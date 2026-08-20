@@ -1,6 +1,5 @@
-# Website top navigation.
-# Change the order here to change the order in the header.
-# Remove an item here to hide it from the header.
+# Move a complete title + url block to reorder the navigation.
+# Delete a block to hide that page from the header.
 
 main:
   - title: "Home"

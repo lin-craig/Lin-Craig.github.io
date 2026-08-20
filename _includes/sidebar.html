@@ -1,25 +1,23 @@
-{% include base_path %}
-
-{% if page.author_profile or layout.author_profile or page.sidebar %}
-  <div class="sidebar sticky">
-  {% if page.author_profile or layout.author_profile %}{% include author-profile.html %}{% endif %}
-  {% if page.sidebar %}
-    {% for s in page.sidebar %}
-      {% if s.image %}
-        <img src=
-        {% if s.image contains "://" %}
-          "{{ s.image }}"
-        {% else %}
-          "{{ s.image | prepend: "/images/" | prepend: base_path }}"
-        {% endif %}
-        alt="{% if s.image_alt %}{{ s.image_alt }}{% endif %}">
-      {% endif %}
-      {% if s.title %}<h3>{{ s.title }}</h3>{% endif %}
-      {% if s.text %}{{ s.text | markdownify }}{% endif %}
-    {% endfor %}
-    {% if page.sidebar.nav %}
-      {% include nav_list nav=page.sidebar.nav %}
-    {% endif %}
-  {% endif %}
-  </div>
-{% endif %}
+<aside class="profile" aria-label="Profile">
+  <img
+    class="profile-photo"
+    src="{{ '/images/' | append: site.author.avatar | relative_url }}"
+    alt="Portrait of {{ site.author.name }}"
+    width="180"
+    height="180"
+  >
+  <h2>{{ site.author.name }}</h2>
+  <p class="profile-bio">{{ site.author.bio }}</p>
+  <ul class="profile-links">
+    <li>
+      <a href="mailto:{{ site.author.email }}" aria-label="Email {{ site.author.name }}">
+        <span aria-hidden="true">✉</span> Email
+      </a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}/" target="_blank" rel="noopener noreferrer">
+        <span aria-hidden="true">in</span> LinkedIn
+      </a>
+    </li>
+  </ul>
+</aside>
