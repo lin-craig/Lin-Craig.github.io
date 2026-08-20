@@ -14,10 +14,12 @@
         <span aria-hidden="true">✉</span> Email
       </a>
     </li>
-    <li>
-      <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}/" target="_blank" rel="noopener noreferrer">
-        <span aria-hidden="true">in</span> LinkedIn
-      </a>
-    </li>
+    {% if site.author.linkedin %}
+      <li>
+        <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}/" target="_blank" rel="noopener noreferrer">
+          <span aria-hidden="true">in</span> LinkedIn
+        </a>
+      </li>
+    {% endif %}
   </ul>
 </aside>

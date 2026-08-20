@@ -33,7 +33,7 @@ images/                         头像和网站图标
 
 ## 修改个人资料
 
-在 `_config.yml` 的 `author` 区域修改姓名、头像、简介、邮箱和 LinkedIn。更换头像时，把新图片放进 `images/`，再修改 `avatar` 的文件名。
+在 `_config.yml` 的 `author` 区域修改姓名、头像、简介、邮箱和 LinkedIn。将 `linkedin` 留空会隐藏链接；填入 LinkedIn 用户名会在侧栏和 Contact 页面同时恢复。更换头像时，把新图片放进 `images/`，再修改 `avatar` 的文件名。
 
 ## 修改导航栏
 

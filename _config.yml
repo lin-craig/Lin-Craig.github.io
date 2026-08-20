@@ -12,7 +12,8 @@ author:
   avatar: "yan-craig-lin.jpg"
   bio: "Wireless Communications · Networked Systems"
   email: "linyan2021@outlook.com"
-  linkedin: "limyen"
+  # Leave blank to hide LinkedIn. Set to "limyen" to show it again.
+  linkedin:
 
 # Page defaults
 defaults:
