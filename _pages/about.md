@@ -7,7 +7,7 @@ I graduated from [Nanjing University](https://www.nju.edu.cn/) in July 2026 with
 
 I was an exchange student at the [National University of Singapore](https://www.nus.edu.sg/) in the College of Design and Engineering from January to May 2025. From June to October 2025, I joined the [WANDS Group](https://wands.hk/) at HKUST as a visiting research intern, where I worked on UAV remote identification and LoRaWAN gateway mesh systems.
 
-I was named an **Outstanding Graduate of Nanjing University** and received the **Joyce M. Kuok Special Award**. My other honors include the National Scholarship, Outstanding Student Award, Outstanding Student Leader Award, and Outstanding Volunteer Service Award.
+I was named an **Outstanding Graduate of Nanjing University** and received the **Joyce M. Kuok Special Award**. My other honors include the Outstanding Student Award, Outstanding Student Leader Award, and Outstanding Volunteer Service Award.
 
 ## Updates
 
