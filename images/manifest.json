@@ -1,0 +1,19 @@
+{
+	"name": "Craig Lin",
+	"short_name": null,
+	"description": "Personal academic website of Yan (Craig) Lin, focusing on wireless communications, networked systems, and intelligent resource allocation.",
+	"start_url": "/",
+	"lang": "en-US",
+	"icons": [
+		{
+			"src": "/images/favicon-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "/images/favicon-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	]
+}

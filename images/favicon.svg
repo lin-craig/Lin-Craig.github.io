@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Stone favicon</title>
+  <path fill="#4b5563" d="M63 304 109 164 252 75 399 119 467 270 397 417 211 450 91 380Z"/>
+  <path fill="#9ca3af" d="M109 164 252 75 246 216 63 304Z"/>
+  <path fill="#6b7280" d="M252 75 399 119 333 230 246 216Z"/>
+  <path fill="#374151" d="M399 119 467 270 333 230Z"/>
+  <path fill="#737b87" d="M63 304 246 216 211 450 91 380Z"/>
+  <path fill="#525c69" d="M246 216 333 230 397 417 211 450Z"/>
+  <path fill="#2f3743" d="M333 230 467 270 397 417Z"/>
+  <path fill="#d1d5db" d="M151 169 245 111 239 187 113 248Z" opacity=".75"/>
+  <path fill="none" stroke="#1f2937" stroke-linejoin="round" stroke-width="18" d="M63 304 109 164 252 75 399 119 467 270 397 417 211 450 91 380Z"/>
+</svg>
