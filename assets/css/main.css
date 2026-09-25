@@ -66,6 +66,12 @@ h3 { margin: 1.7rem 0 0.5rem; font-size: 1.15rem; }
 
 .page-content p { margin: 0 0 1.25rem; }
 
+.school-identity { display: inline-flex; align-items: center; gap: 0.4rem; max-width: 100%; vertical-align: middle; }
+
+.school-identity img { display: block; width: auto; height: auto; max-width: 110px; max-height: 44px; flex: none; }
+
+.school-identity span { min-width: 0; }
+
 .page-content li { margin-bottom: 0.55rem; }
 
 .page-content strong { color: #201b18; }
