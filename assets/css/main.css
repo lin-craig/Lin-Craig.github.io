@@ -68,7 +68,13 @@ h3 { margin: 1.7rem 0 0.5rem; font-size: 1.15rem; }
 
 .school-identity { display: inline-flex; align-items: center; gap: 0.4rem; max-width: 100%; vertical-align: middle; }
 
-.school-identity img { display: block; width: auto; height: auto; max-width: 110px; max-height: 44px; flex: none; }
+.school-crest { display: inline-flex; align-items: center; justify-content: center; width: 23px; height: 26px; flex: none; }
+
+.school-crest img { display: block; width: auto; height: 26px; max-width: 23px; }
+
+.school-crest--usyd { position: relative; overflow: hidden; }
+
+.school-crest--usyd img { position: absolute; top: 0; left: 0; max-width: none; }
 
 .school-identity span { min-width: 0; }
 
