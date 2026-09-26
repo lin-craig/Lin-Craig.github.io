@@ -52,13 +52,9 @@ a:focus-visible { outline: 3px solid rgba(164, 85, 60, 0.28); outline-offset: 3p
 
 .content-card { min-width: 0; padding: clamp(1.6rem, 4vw, 3.25rem); border: 1px solid var(--border); border-radius: 10px; background: var(--surface); box-shadow: var(--shadow); }
 
-.page-header { margin-bottom: 2.1rem; padding-bottom: 1.35rem; border-bottom: 1px solid var(--border); }
+.page-header { margin-bottom: 1.6rem; padding-bottom: 0.9rem; border-bottom: 1px solid var(--border); }
 
-.page-header--home { margin-bottom: 1.6rem; padding-bottom: 0.9rem; }
-
-.page-header--home h1 { font-size: clamp(1.9rem, 3.5vw, 2.45rem); letter-spacing: -0.025em; }
-
-.page-eyebrow { margin: 0 0 0.45rem; color: var(--accent); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
+.page-header h1 { font-size: clamp(1.9rem, 3.5vw, 2.45rem); letter-spacing: -0.025em; }
 
 h1, h2, h3 { color: var(--text); font-family: var(--serif); }
 
@@ -69,6 +65,10 @@ h2 { margin: 2.4rem 0 0.8rem; padding-bottom: 0.45rem; border-bottom: 1px solid 
 h3 { margin: 1.7rem 0 0.5rem; font-size: 1.15rem; }
 
 .page-content > :first-child { margin-top: 0; }
+
+.page-content { font-family: var(--sans); }
+
+.page-header h1, .page-content h2, .page-content h3 { font-family: var(--serif); }
 
 .page-content p { margin: 0 0 1.25rem; }
 
