@@ -44,13 +44,13 @@ a:focus-visible { outline: 3px solid rgba(164, 85, 60, 0.28); outline-offset: 3p
 
 .site-shell { width: min(calc(100% - 2rem), var(--content-width)); margin: clamp(5rem, 17vh, 11rem) auto 0; display: grid; grid-template-columns: var(--profile-width) minmax(0, 1fr); gap: var(--shell-gap); align-items: start; }
 
-.profile { --portrait-overlap: 2.25rem; position: sticky; top: 100px; isolation: isolate; }
+.profile { --portrait-overlap: 1.75rem; position: sticky; top: 100px; isolation: isolate; }
 
-.profile-portrait { position: relative; z-index: 1; height: 16.5rem; margin: 0 -0.75rem calc(-1 * var(--portrait-overlap)); pointer-events: none; }
+.profile-portrait { position: relative; z-index: 1; height: 15rem; overflow: hidden; margin: 0 -0.75rem calc(-1 * var(--portrait-overlap)); pointer-events: none; }
 
-.profile-portrait::before { position: absolute; z-index: 0; inset: 19% 12% 10% 19%; border-radius: 48% 52% 32% 34% / 54% 55% 33% 34%; background: linear-gradient(155deg, rgba(55, 81, 101, 0.83), rgba(113, 145, 155, 0.6) 60%, rgba(169, 185, 185, 0.08)); content: ""; }
+.profile-portrait::before { position: absolute; z-index: 0; inset: 19% 12% 10% 19%; border-radius: 48% 52% 32% 34% / 54% 55% 33% 34%; background: linear-gradient(155deg, rgba(157, 138, 116, 0.4), rgba(198, 178, 146, 0.28) 65%, rgba(225, 208, 179, 0.06)); content: ""; }
 
-.profile-photo { position: relative; z-index: 1; display: block; width: 100%; height: 100%; object-fit: contain; object-position: center bottom; -webkit-mask-image: linear-gradient(#000 82%, transparent); mask-image: linear-gradient(#000 82%, transparent); }
+.profile-photo { position: relative; z-index: 1; display: block; width: 100%; /* Keep the face at its previous scale while cropping the lower 9.5%. */ height: 110.5263%; object-fit: contain; object-position: center top; -webkit-mask-image: linear-gradient(#000 76%, transparent 90.5%); mask-image: linear-gradient(#000 76%, transparent 90.5%); }
 
 .profile-details { padding: 1.25rem; border-radius: var(--radius-surface); }
 
@@ -128,7 +128,7 @@ h3 { margin: 1.7rem 0 0.5rem; font-size: 1.15rem; }
 
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { .header-inner, .photo-background .profile-details, .photo-background .content-card, .photo-background .site-footer p { background: var(--glass-fill-strong); } }
 @media (min-width: 861px) { .home-page .profile { margin-top: -1.75rem; }
-  .home-page .profile-portrait { height: clamp(16.5rem, 27vw, 21rem); margin-inline: -1.2rem; }
+  .home-page .profile-portrait { height: clamp(15rem, 24.4vw, 19rem); margin-inline: -1.2rem; }
   .profile h2 { font-size: clamp(1.8rem, 2.6vw, 2.25rem); } }
 @media (max-width: 860px) { .header-inner { height: auto; padding: 8px; flex-direction: column; align-items: flex-start; gap: 0; }
   .site-name { display: none; }
@@ -138,7 +138,7 @@ h3 { margin: 1.7rem 0 0.5rem; font-size: 1.15rem; }
   .site-shell { margin-top: clamp(4.5rem, 12vh, 7rem); grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
   .profile { --profile-row-height: clamp(8.25rem, 33vw, 12rem); position: static; display: grid; min-height: var(--profile-row-height); }
   .home-page .profile { --portrait-column: clamp(6.4rem, 28vw, 10.5rem); grid-template-columns: var(--portrait-column) minmax(0, 1fr); align-items: end; }
-  .profile-portrait { grid-area: 1 / 1; height: var(--profile-row-height); margin: 0 -0.4rem 0; }
+  .profile-portrait { grid-area: 1 / 1; height: calc(var(--profile-row-height) * 0.905); margin: 0 -0.4rem 0; }
   .profile-details { display: grid; align-content: center; padding: 0.85rem 1.25rem; }
   .home-page .profile-details { grid-area: 1 / 1 / 2 / -1; min-height: clamp(7rem, 25vw, 9.2rem); padding: 0.85rem 0.85rem 0.85rem calc(var(--portrait-column) + 0.45rem); }
   .profile h2 { font-size: clamp(1.35rem, 4.5vw, 1.65rem); }
